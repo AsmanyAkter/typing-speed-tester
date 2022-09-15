@@ -22,15 +22,16 @@ function addHistory(questionText, timeTaken, errorCount) {
   histories.appendChild(newRow);
 
   let previousTests = JSON.parse(localStorage.getItem("testHistory")) || [];
-  previousTests.push({ questionText, timeTaken, errorCount });
+  previousTests.push({ questionText, wordCount, timeTaken, errorCount });
   localStorage.setItem("testHistory", JSON.stringify(previousTests));
 
   displayHistory(wordCount);
 }
 
-function displayHistory(wordCount) {
+function displayHistory() {
   histories.innerHTML = "";
   const previousTests = JSON.parse(localStorage.getItem("testHistory")) || [];
+
 
   previousTests.forEach((test) => {
     const newRow = document.createElement("div");
@@ -39,7 +40,7 @@ function displayHistory(wordCount) {
 
     newRow.innerHTML = `
   <h3>${test.questionText}</h3>
-  <h4> Your word count per min: <span class="blod green">${wordCount}</span> WPM </h4>
+  <h4> Your word count per min: <span class="blod green">${test.wordCount}</span> WPM </h4>
   <p>You took: <span class="bold">${test.timeTaken}</span> seconds</p>
     <p>You made <span class="bold red">${test.errorCount}</span> mistakes</p>
   `;
