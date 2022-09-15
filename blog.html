@@ -30,19 +30,11 @@
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <p>Local Storage: This read-only interface property provides access to the Document’s local
-                            storage object, the stored data is stored across browser sessions. Similar to
-                            sessionStorage, except that localStorage data gets cleared when the page session ends – that
-                            is when the page is closed. It is cleared when the last “private” tab of a browser is closed
-                            (localStorage data for a document loaded in a private browsing or incognito session).
+                        <p>The main difference between localStorage and sessionStorage is that sessionStorage is unique
+                            per tab. If you close the tab the sessionStorage gets deleted, localStorage does not.
 
-                        </p>
-
-                        <p>
-                            Session Storage: Session Storage objects can be accessed using the sessionStorage read-only
-                            property. The
-                            difference between sessionStorage and localStorage is that localStorage data does not
-                            expire, whereas sessionStorage data is cleared when the page session ends.
+                            Another difference is localStorage has a limit of 2551 k characters but sessionStorage has
+                            unlimited storage.
                         </p>
                     </div>
                 </div>
@@ -58,9 +50,8 @@
                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <p>Block Scope: A variable when declared inside the if or switch conditions or inside for or
-                            while loops, are accessible within that particular condition or loop. To be consise the
-                            variables declared inside the curly braces are called as within block scope.</p>
+                        <p> Block Scope: The block scope of a variable means that the variable is accessible within the
+                            block that is between the curly braces. You can't access them from outside that block. </p>
                         <p>
                             Global Scope: Variables declared Globally (outside any function) have Global Scope. Global
                             variables can be accessed from anywhere in a JavaScript program. Variables declared with
@@ -80,13 +71,14 @@
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body">
 
-                        <p>Event loop is an endless loop, which waits for tasks, executes them and then sleeps until it
-                            receives more tasks.
-                            JavaScript has a runtime model based on an event loop, which is responsible for executing
-                            the code, collecting and processing events, and executing queued sub-tasks.
-                            The event loop is a mechanism that allows JavaScript to perform non-blocking operations.
-                            When an asynchronous task is started, the event loop will start running. Once the task is
-                            completed, the event loop will again check for any other tasks that need to be performed.
+                        <p>An event loop is an infinite loop that waits for tasks, executes them, and then sleeps until
+                            it gets additional tasks.
+
+                            JavaScript's runtime model is built on an event loop, which is in responsible of running
+                            code, collecting and processing events, and performing queued sub-tasks. The event loop is a
+                            technology that allows JavaScript to conduct non-blocking activities. When an asynchronous
+                            job is launched, the event loop begins to execute. When the job is finished, the event loop
+                            will check for any remaining tasks.
                         </p>
 
                     </div>
