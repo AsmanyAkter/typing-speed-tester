@@ -80,6 +80,7 @@ const gameOver = () => {
   display.innerHTML = "";
   // make it inactive
   display.classList.add("inactive");
+  // resultModal.classList.add("modal-background")
   // show result
   resultModal.innerHTML += `
     <h1>Finished!</h1>
