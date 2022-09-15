@@ -72,6 +72,11 @@ const gameOver = () => {
   const finishTime = new Date().getTime();
   const timeTaken = parseInt((finishTime - startTime) / 1000);
 
+  // wordCount
+
+  let wordlist = questionText.split(' ');
+  let wordCount = parseInt((wordlist.length / timeTaken) * 60)
+
   // show result modal
   resultModal.innerHTML = "";
   resultModal.classList.toggle("hidden");
@@ -80,10 +85,10 @@ const gameOver = () => {
   display.innerHTML = "";
   // make it inactive
   display.classList.add("inactive");
-  // resultModal.classList.add("modal-background")
   // show result
   resultModal.innerHTML += `
     <h1>Finished!</h1>
+    <h4> Your word count per min: <span class="blod green">${wordCount}</span> WPM </h4>
     <p>You took: <span class="bold">${timeTaken}</span> seconds</p>
     <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
     <button onclick="closeModal()">Close</button>
